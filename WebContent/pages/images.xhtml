@@ -1,0 +1,31 @@
+<ui:composition template="/WEB-INF/templates/geral.xhtml"
+		xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:h="http://java.sun.com/jsf/html"
+	 	xmlns:ui="http://java.sun.com/jsf/facelets"
+	 	xmlns:f="http://java.sun.com/jsf/core"
+	 	xmlns:p="http://primefaces.prime.com.tr/ui">
+
+
+	<ui:define name="conteudo">
+<h2>Photos gallery</h2>
+<legend></legend>
+<h:head>
+		<h:outputStylesheet library="css" name="filtergrey.css"></h:outputStylesheet>
+		<h:outputStylesheet library="css" name="gallery.css"></h:outputStylesheet>
+</h:head>
+
+<ui:repeat var="var" value="#{repositorio.lista}">  
+                <p:lightBox >
+                		<div class="col-md-3 col-sm-4 col-xs-6 img">
+                		<a href="#{var.uri}" >      
+                        <h:graphicImage class="img-responsive" value="#{var.uri}" width="420" height="340"
+                        border="4" title="Click to download"/>
+                        </a>
+                        </div>    
+                    
+                </p:lightBox>  
+        </ui:repeat>    
+
+	</ui:define>
+
+</ui:composition>

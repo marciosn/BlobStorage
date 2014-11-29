@@ -1,0 +1,42 @@
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+      
+      
+ <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span3">
+          <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+              <li class="nav-header">MENU DASHBOARD</li>
+              
+              <li class="active"><a href="#">Options</a></li>
+              <li><h:link value="Home" outcome="/index" /></li>
+              <li><h:link value="List Blobs" outcome="/pages/list" /></li>
+              <li><h:link value="Upload" outcome="/pages/upload" /></li>
+              <li><h:link value="Delete" outcome="/pages/delete" /></li>
+              <li><h:link value="Download" outcome="/pages/download" /></li>
+              <li><h:link value="Gallery Images" outcome="/pages/images" /></li>
+              <li><a href="#"></a></li>
+              <li><a href="#"></a></li>
+              <li><a href="#"></a></li>
+              <li><a href="#"></a></li>
+              <li><a href="#"></a></li>
+              
+            </ul>
+          </div><!--/.well -->
+        </div><!--/span-->
+        	
+      <div class="span9">
+        <ui:insert name="conteudo">	
+			Espaço para o conteúdo da página.
+		</ui:insert>
+      </div>
+      </div><!--/row-->
+
+    </div><!--/.fluid-container-->
+
+</ui:composition>

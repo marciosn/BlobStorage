@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	 	xmlns:f="http://java.sun.com/jsf/core"
+	 	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Login</title>
+	<h:outputStylesheet library="css" name="style1.css"></h:outputStylesheet>
+	<h:outputStylesheet library="css" name="style2.css"></h:outputStylesheet>
+	<h:outputStylesheet library="css" name="style3.css"></h:outputStylesheet>
+	<!-- <h:outputStylesheet library="css" name="style4.css"></h:outputStylesheet> -->
+
+		    <style type="text/css">       
+	        .row {
+	            padding: 80px 0px;
+	        }   
+	        .row + .row {
+	            margin-top: 10px;
+	            margin-bottom: 10px;
+	          
+	        }
+	        .red{
+      			color: #FF3333;
+      		}
+      		#body{
+      		/* background-image: url("resources/img/back.png"); */
+      		background-color: #000000;
+      		}          
+	    </style>
+
+</h:head>
+<h:body>
+<!-- class="block white" -->
+
+		<div class="block white" id="login">
+		<p:growl id="growl" showDetail="true" sticky="false" />
+        <div class="container">
+            <div class="row">
+                <div class="span6">
+                    <h1>Login to access the Dashboard</h1>
+                    <!-- <h:messages /> -->
+                    <hr/>
+                    <!-- <p:messages showDetail="true" closable="true"/> -->
+                    <ul>
+                        
+                    </ul>
+                </div>
+                <div class="offset1 span5">
+                    <div class="clear-form">                        
+                        <h:form>               
+                            <div class="form-heading">
+                                <h3>Login</h3>                               
+                            </div>  
+                            <div class="form-body">
+                            	<h:outputLabel  for="username" value="UserName" />
+                                <h:inputText id="username" label="username" value="#{login.nome}" class="input-block-level"  required="true"/>
+                                <h:outputLabel for="password" value="Password" />
+                                <h:inputSecret id="password" label="password" value="#{login.password}" class="input-block-level" required="true"/> 
+                                <div class="body-split">
+                                    <div class="left-col">
+                                      
+                                    </div>
+                                    <div class="right-col pull-left">
+                                    	<h:commandButton action="#{login.loginBean}" value="Sign In" class="btn btn-blue"/>                         
+                              
+                                    </div>
+                                </div>                
+                            </div>                              
+                            <div class="form-footer">                          
+                                <hr/>
+                                <p class="center">
+                                    <a href="#"></a>
+                                </p>
+                            </div>                
+                        </h:form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</h:body>
+</html>

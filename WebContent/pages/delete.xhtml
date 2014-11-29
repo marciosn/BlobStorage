@@ -1,0 +1,226 @@
+<ui:composition template="/WEB-INF/templates/geral.xhtml"
+		xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:h="http://java.sun.com/jsf/html"
+	 	xmlns:ui="http://java.sun.com/jsf/facelets"
+	 	xmlns:f="http://java.sun.com/jsf/core"
+	 	xmlns:p="http://primefaces.org/ui">
+
+
+	<ui:define name="conteudo">
+	<h2>Select the file to delete</h2>
+<legend></legend>
+		<p:messages showDetail="true" closable="true"/>
+	   <form action="#" method="get">
+                <div class="input-group">
+                    <!-- USE TWITTER TYPEAHEAD JSON WITH API TO SEARCH -->
+                    <input class="form-control" id="system-search" name="q" placeholder="Search for"/>
+                    <span class="input-group-btn">
+                        <button type="submit" class="btn btn-default">search</button>
+                    </span>
+                </div>
+            </form>
+            
+         <div class="">
+    <ul class="nav nav-tabs">
+      <li class="active"><a href="#home" data-toggle="tab">Images</a></li>
+      <li><a href="#music" data-toggle="tab">Music</a></li>
+      <li><a href="#video" data-toggle="tab">Video</a></li>
+      <li><a href="#pdf" data-toggle="tab">PDF</a></li>
+      <li><a href="#other" data-toggle="tab">Others</a></li>
+    </ul>
+    <div id="myTabContent" class="tab-content">
+      <div class="tab-pane active in" id="home">
+      <form id="tab">
+<h:dataTable styleClass="table table-condensed table-list-search"
+		 value="#{repositorio.lista}" var="var" rendered="#{not empty repositorio.lista}" id="tabela1"
+		 showCaption="true"
+		 >
+
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Bolbs Uris" class="label label-info"/>
+				</f:facet>
+				<h5>
+				<h:link value="#{var.uri}"/>
+				</h5>
+			</h:column>
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Options" class="label label-info"/>
+				</f:facet>
+				<h:form>
+				<h:commandButton value="Delete" action="#{storageControll.DeleteBlobs}" class="btn btn-primary btn-xs">
+				<f:setPropertyActionListener target="#{storageControll.nomeArquivo}" value="#{var.uri}"/>
+				</h:commandButton>
+				</h:form>
+			</h:column>
+
+
+</h:dataTable>
+      </form>
+		    	<div class="form-actions">
+		<h:form>
+				<h:commandButton value="Buscar Blobs na StorageAzure" action="#{storageControll.ListarBlobs}"
+				   styleClass="btn btn-primary" id="loading" data-loading-text="Loading..." />
+		</h:form>
+    	</div>		
+      </div>
+      
+      <div class="tab-pane fade" id="music">
+    	<form id="tab2">
+<h:dataTable styleClass="table table-bordered table-condensed table-list-search"
+		 value="#{repositorio.listamusics}" var="var" rendered="#{not empty repositorio.listamusics}" id="tabela2"
+		 showCaption="true"
+		 >
+
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Bolbs Uris" class="label label-info"/>
+				</f:facet>
+				<h5>
+				<h:link value="#{var.uri}"/>
+				</h5>
+			</h:column>
+							<h:column>
+				<f:facet name="header">
+					<h:outputText value="Options" class="label label-info"/>
+				</f:facet>
+				<h:form>
+				<h:commandButton value="Delete" action="#{storageControll.DeleteBlobs}" class="btn btn-primary btn-xs">
+				<f:setPropertyActionListener target="#{storageControll.nomeArquivo}" value="#{var.uri}"/>
+				</h:commandButton>
+				</h:form>
+			</h:column>
+</h:dataTable>
+    	</form>
+    	    	<div class="form-actions">
+		<h:form>
+				<h:commandButton value="Buscar Blobs na StorageAzure" action="#{storageControll_Music.ListarBlobs}"
+				   styleClass="btn btn-primary" id="loading" data-loading-text="Loading..." />
+		</h:form>
+    	</div>
+      </div>
+      
+      <div class="tab-pane fade" id="video">
+    	<form id="tab3">
+<h:dataTable styleClass="table table-bordered table-condensed table-list-search"
+		 value="#{repositorio.listvideos}" var="var" rendered="#{not empty repositorio.listvideos}" id="tabela3"
+		 showCaption="true"
+		 >
+
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Bolbs Uris" class="label label-info"/>
+				</f:facet>
+				<h5>
+				<h:link value="#{var.uri}"/>
+				</h5>
+			</h:column>
+						<h:column>
+				<f:facet name="header">
+					<h:outputText value="Options" class="label label-info"/>
+				</f:facet>
+				<h:form>
+				<h:commandButton value="Delete" action="#{storageControll.DeleteBlobs}" class="btn btn-primary btn-xs">
+				<f:setPropertyActionListener target="#{storageControll.nomeArquivo}" value="#{var.uri}"/>
+				</h:commandButton>
+				</h:form>
+			</h:column>
+
+</h:dataTable>
+    	</form>
+    	    	<div class="form-actions">
+		<h:form>
+				<h:commandButton value="Buscar Blobs na StorageAzure" action="#{storageControll_Videos.ListarBlobs}"
+				   styleClass="btn btn-primary" id="loading" data-loading-text="Loading..." />
+		</h:form>
+    	</div>
+      </div>
+      
+      <div class="tab-pane fade" id="pdf">
+    	<form id="tab4">
+<h:dataTable styleClass="table table-bordered table-condensed table-list-search"
+		 value="#{repositorio.listapdfs}" var="var" rendered="#{not empty repositorio.listapdfs}" id="tabela4"
+		 showCaption="true"
+		 >
+
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Bolbs Uris" class="label label-info"/>
+				</f:facet>
+				<h5>
+				<h:link value="#{var.uri}" class="media" target="_blank"/>
+				
+				<a class="media" href="http://jquery.malsup.com/media/guice.pdf"/>
+				</h5>
+			</h:column>
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Options" class="label label-info"/>
+				</f:facet>
+				<h:form>
+				<h:commandButton value="Delete" action="#{storageControll.DeleteBlobs}" class="btn btn-primary btn-xs">
+				<f:setPropertyActionListener target="#{storageControll.nomeArquivo}" value="#{var.uri}"/>
+				</h:commandButton>
+				</h:form>
+			</h:column>
+
+</h:dataTable>
+    	</form>
+    	    	<div class="form-actions">
+		<h:form>
+				<h:commandButton value="Buscar Blobs na StorageAzure" action="#{storageControll_Pdfs.ListarBlobs}"
+				   styleClass="btn btn-primary" id="loading" data-loading-text="Loading..." />
+		</h:form>
+    	</div>
+      </div>
+      
+      <div class="tab-pane fade" id="other">
+    	<form id="tab5">
+<h:dataTable styleClass="table table-bordered table-condensed table-list-search"
+		 value="#{repositorio.listageneral}" var="var" rendered="#{not empty repositorio.listageneral}" id="tabela5"
+		 showCaption="true"
+		 >
+
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Bolbs Uris" class="label label-info"/>
+				</f:facet>
+				<h5>
+				<h:link value="#{var.uri}"/>
+				</h5>
+				<h:form>
+				<h:commandLink hreflang="#{var.uri}"/>
+				</h:form>
+			</h:column>
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Options" class="label label-info"/>
+				</f:facet>
+				<h:form>
+				<h:commandButton value="Delete" action="#{storageControll.DeleteBlobs}" class="btn btn-primary btn-xs">
+				<f:setPropertyActionListener target="#{storageControll.nomeArquivo}" value="#{var.uri}"/>
+				</h:commandButton>
+				</h:form>
+			</h:column>
+
+
+</h:dataTable>
+    	</form>
+    	
+    	<div class="form-actions">
+		<h:form>
+				<h:commandButton value="Buscar Blobs na StorageAzure" action="#{storageControll_General.ListarBlobs}"
+				   styleClass="btn btn-primary" id="loading" data-loading-text="Loading..." />
+		</h:form>
+    	</div>
+      
+  </div>
+
+ </div>
+
+		</div>
+            
+	</ui:define>
+
+</ui:composition>

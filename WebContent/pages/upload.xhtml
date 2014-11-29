@@ -1,0 +1,148 @@
+<ui:composition template="/WEB-INF/templates/geral.xhtml"
+		xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:h="http://java.sun.com/jsf/html"
+	 	xmlns:ui="http://java.sun.com/jsf/facelets"
+	 	xmlns:f="http://java.sun.com/jsf/core"
+	 	xmlns:p="http://primefaces.org/ui"
+	 	xmlns:rich="http://richfaces.org/rich">
+
+
+	<ui:define name="conteudo">
+	<h2>Upload Blobs</h2>
+		<legend></legend>
+	<p:messages showDetail="true" closable="true"/>
+	  
+
+<div class="well">
+    <ul class="nav nav-tabs">
+      <li class="active"><a href="#home" data-toggle="tab">Images</a></li>
+      <li><a href="#music" data-toggle="tab">Music</a></li>
+      <li><a href="#video" data-toggle="tab">Video</a></li>
+      <li><a href="#pdf" data-toggle="tab">PDF</a></li>
+      <li><a href="#other" data-toggle="tab">Others</a></li>
+    </ul>
+    <div id="myTabContent" class="tab-content">
+      <div class="tab-pane active in" id="home">
+      <br/><br/>
+      
+      	<!--AQUI DEVE SER INSERIDA A PARTE DA PRIMEIRA ABA  -->
+			<h:panelGrid>
+	
+ 					<h:form enctype="multipart/form-data" id="tab">
+  
+    						<p:fileUpload value="#{storageControll.file2}" mode="simple"/> 
+    						<br/> 
+  
+    						<p:commandButton value="Upload Image" ajax="false" action="#{storageControll.Upload}" class="btn btn-success"
+    						 data-toggle="modal" data-target="#processing-modal"/>  
+  
+					</h:form>
+			</h:panelGrid>	
+
+		<h4>Only select images to upload.</h4>
+      				
+      </div>
+      <div class="tab-pane fade" id="music">
+      <br/><br/>
+    	
+		<!--AQUI DEVE SER INSERIDA A PARTE DA PRIMEIRA ABA  -->
+			<h:panelGrid>
+	
+ 					<h:form enctype="multipart/form-data" id="tab2">  
+  	
+    						<!-- <p:messages showDetail="true" closable="true"/>   -->
+  
+    						<p:fileUpload value="#{storageControll_Music.file2}" mode="simple"/>  
+  							<br/>
+    						<p:commandButton value="Upload Music" ajax="false" action="#{storageControll_Music.Upload}" 
+    						class="btn btn-success" data-toggle="modal" data-target="#processing-modal"/>  
+  
+					</h:form>
+
+			</h:panelGrid>
+			<h4>Only select musics to upload.</h4>
+      </div>
+      
+      <div class="tab-pane fade" id="video">
+      <br/><br/>
+			<h:panelGrid>
+	
+ 					<h:form enctype="multipart/form-data" id="tab3">  
+  	
+    						<!-- <p:messages showDetail="true" closable="true"/>   -->
+  
+						    <p:fileUpload value="#{storageControll_Videos.file2}" mode="simple"/>  
+  							<br/>
+    						<p:commandButton value="Upload Video" ajax="false" action="#{storageControll_Videos.Upload}" 
+    						class="btn btn-success" data-toggle="modal" data-target="#processing-modal"/>  
+  
+					</h:form>
+
+			</h:panelGrid>
+			<h4>Only select videos to upload.</h4>
+      </div>
+      
+      <div class="tab-pane fade" id="pdf">
+      <br/><br/>
+			<h:panelGrid>
+	
+ 					<h:form enctype="multipart/form-data" id="tab4">  
+  	
+						    <!-- <p:messages showDetail="true" closable="true"/>   -->
+  
+    						<p:fileUpload value="#{storageControll_Pdfs.file2}" mode="simple"/>  
+  							<br/>
+    						<p:commandButton value="Upload PDF" ajax="false" action="#{storageControll_Pdfs.Upload}"
+    						class="btn btn-success" data-toggle="modal" data-target="#processing-modal"/>  
+  
+					</h:form>
+
+			</h:panelGrid>
+			<h4>Only select pfds to upload.</h4>
+      </div>
+      
+      <div class="tab-pane fade" id="other">
+      <br/><br/>
+			<h:panelGrid>
+	
+ 					<h:form enctype="multipart/form-data" id="tab5">  
+  	
+						    <!-- <p:messages showDetail="true" closable="true"/> -->  
+  
+    						<p:fileUpload value="#{storageControll_General.file2}" mode="simple"/>  
+  							<br/>
+    						<p:commandButton value="Upload" ajax="false" action="#{storageControll_General.Upload}"
+    						class="btn btn-success" data-toggle="modal" data-target="#modal"/>  
+  	
+					</h:form>
+
+			</h:panelGrid>
+			<h4>Others types.</h4>
+      </div>
+      
+  </div>
+
+</div>
+
+<!-- <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#processing-modal">  </button> -->
+
+
+<!-- Static Modal -->
+<div class="modal modal-static fade" id="modal" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="text-center">
+                    <img src="http://www.travislayne.com/images/loading.gif" class="icon" />
+                    <h4>Processing... <button type="button" class="close" style="float: none;" data-dismiss="modal" aria-hidden="true">×</button></h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+	</ui:define>
+	
+
+
+</ui:composition>

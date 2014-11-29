@@ -1,0 +1,290 @@
+<html xmlns="http://www.w3.org/1999/xhtml"  
+    xmlns:h="http://java.sun.com/jsf/html"  
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:ui="http://java.sun.com/jsf/facelets"  
+    xmlns:p="http://primefaces.org/ui">  
+  
+    <h:head>  
+    <h:outputStylesheet library="css" name="bootstrap.css"></h:outputStylesheet>
+	<h:outputStylesheet library="css" name="bootstrapnew.css"></h:outputStylesheet>
+	<h:outputStylesheet library="css" name="bootstrap-themenew.css"></h:outputStylesheet>
+	<h:outputStylesheet library="css" name="style.css"></h:outputStylesheet>
+	<h:outputStylesheet library="css" name="stylemenu.css"></h:outputStylesheet>
+	<h:outputStylesheet library="css" name="stylemarcio.css"></h:outputStylesheet>
+	<h:outputStylesheet library="css" name="load.css"></h:outputStylesheet>
+	<h:outputStylesheet library="css" name="modal.css"></h:outputStylesheet>
+	<h:outputStylesheet library="css" name="bounce.css"></h:outputStylesheet>
+    <style>
+      body {
+        padding-top: 70px; /* 60px to make the container go all the way to the bottom of the topbar */
+        
+      }
+      .main{
+      
+	
+
+	}
+	.container-fluid{
+
+	}
+	#principal{
+
+	}
+	#tabela{
+	background-color: #FFFFFF;
+	}
+	.hero-unit{
+	padding-top: 10px;
+	}
+	#rodape{
+	color: #3D3333;
+	}
+	.divDemoBody  {
+				width: 60%;
+				margin-left: auto;
+				margin-right: auto;
+				margin-top: 100px;
+				}
+			.divDemoBody p {
+				font-size: 18px;
+				line-height: 140%;
+				padding-top: 12px;
+				}
+			.divDialogElements input {
+				font-size: 18px;
+				padding: 3px; 
+				height: 32px; 
+				width: 500px; 
+				}
+			.divButton {
+				padding-top: 12px;
+				}
+	
+
+      
+    </style>
+	<h:outputStylesheet library="css" name="bootstrap-responsive.css"></h:outputStylesheet>
+		<h:outputScript library="js" name="jquery.js"></h:outputScript>
+		<h:outputScript library="js" name="jquery.zohoviewer.js"></h:outputScript>
+	<h:outputScript library="js" name="jquery.media.js"></h:outputScript>
+	<h:outputScript library="js" name="jquery.metadata.js"></h:outputScript>
+	<h:outputScript library="js" name="modal.js"></h:outputScript>
+	<h:outputScript library="js" name="bootstrap.js"></h:outputScript>
+	<h:outputScript library="js" name="bootstrap.min.js"></h:outputScript>
+	<h:outputScript library="js" name="bootstrap-typeahead.js"></h:outputScript>
+	<h:outputStylesheet library="css" name="bootstrap-responsive.min.css"></h:outputStylesheet>
+  	
+	<script type="text/javascript">
+    $(function() {
+        $('a.media').media({width:850, height:400});
+    });
+</script>
+  	
+    </h:head>  
+      
+    <h:body> 
+   <ui:insert name="cabecalho">
+		<ui:include src="/WEB-INF/templates/cabecalho.xhtml" />
+</ui:insert>
+
+    
+    
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span3">
+          <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+              <li class="nav-header">MENU DASHBOARD</li>
+              
+              <li class="active"><a href="#">Options</a></li>
+              <li><h:link value="Home" outcome="/index" /></li>
+              <li><h:link value="List Blobs" outcome="/pages/list" /></li>
+              <li><h:link value="Show Images" outcome="/pages/images" /></li>
+              <li><h:link value="Upload" outcome="/pages/upload" /></li>
+              <li><h:link value="Delete" outcome="/pages/delete" /></li>
+              <li><h:link value="Download" outcome="/pages/download" /></li>
+              <li><h:link value="pag test" outcome="/pages/Primefaces" /></li>
+              <li><a href="#"></a></li>
+              <li><a href="#"></a></li>
+              <li><a href="#"></a></li>
+              <li><a href="#"></a></li>
+              <li><a href="#"></a></li>
+              <li><a href="#"></a></li>
+              
+            </ul>
+          </div><!--/.well -->
+        </div><!--/span-->
+        	
+  <div class="span9">
+
+
+ <legend></legend>
+  
+<div class="well">
+    <ul class="nav nav-tabs">
+      <li class="active"><a href="#home" data-toggle="tab">Images</a></li>
+      <li><a href="#music" data-toggle="tab">Music</a></li>
+      <li><a href="#video" data-toggle="tab">Video</a></li>
+      <li><a href="#pdf" data-toggle="tab">PDF</a></li>
+      <li><a href="#other" data-toggle="tab">Others</a></li>
+    </ul>
+    <div id="myTabContent" class="tab-content">
+      <div class="tab-pane active in" id="home">
+      <h:form id="tab">
+			<form id="fileupload" action="//jquery-file-upload.appspot.com/" method="POST" enctype="multipart/form-data">
+        <!-- Redirect browsers with JavaScript disabled to the origin page -->
+        <noscript><input type="hidden" name="redirect" value="http://blueimp.github.com/jQuery-File-Upload/"/></noscript>
+        <!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
+        <div class="row fileupload-buttonbar">
+            <div class="span7">
+                <!-- The fileinput-button span is used to style the file input field as button -->
+                <span class="btn btn-success fileinput-button">
+   
+                    <span>Add files...</span>
+                    <input type="file" name="files[]"/>
+                </span>
+                <!-- <button type="submit" class="btn btn-primary start">
+                    
+                    <span>Start upload</span>
+                </button> -->
+                <h:commandButton value="Start" action="#{storageControll.Testando}" class="btn btn-primary start"/>
+                <button type="reset" class="btn btn-warning cancel">
+                    
+                    <span>Cancel upload</span>
+                </button>
+
+
+            </div>
+            <!-- The global progress information -->
+            <div class="span5 fileupload-progress fade">
+                <!-- The global progress bar -->
+                <div class="progress progress-success progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+                    <div class="bar" style="width:0%;"></div>
+                </div>
+                <!-- The extended global progress information -->
+                <div class="progress-extended"></div>
+            </div>
+        </div>
+        <!-- The loading indicator is shown during file processing -->
+        <div class="fileupload-loading"></div>
+        <br/>
+        <!-- The table listing the files available for upload/download -->
+        <table role="presentation" class="table table-striped"><tbody class="files" data-toggle="modal-gallery" data-target="#modal-gallery"></tbody></table>
+    </form> 
+
+      </h:form>
+					
+      </div>
+      <div class="tab-pane fade" id="music">
+    	<form id="tab2">
+			<h:dataTable styleClass="table table-bordered table-condensed table-list-search"
+		 value="#{repositorio.listapdfs}" var="var" rendered="#{not empty repositorio.listapdfs}" id="tabela2"
+		 showCaption="true"
+		 >
+
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Bolbs Uris" class="label label-info"/>
+				</f:facet>
+				 
+				 <a class="media" href="http://jquery.malsup.com/media/guice.pdf"/> 
+			</h:column>
+
+
+</h:dataTable>
+    	</form>
+      </div>
+      
+      <div class="tab-pane fade" id="video">
+
+	<form id="tab2">
+		<h1>testando5</h1>
+	</form>
+
+      </div>
+      
+      <div class="tab-pane fade" id="pdf">
+    	<form id="tab2">
+				<h1>testando5</h1>
+    	</form>
+      </div>
+      
+      <div class="tab-pane fade" id="other">
+    	<form id="tab2">
+		<!--AQUI DEVE SER INSERIDA A PARTE DA PRIMEIRA ABA  -->
+					
+					<h1>testando5</h1>
+    	</form>
+      </div>
+      
+  </div>
+
+ 
+
+ </div>
+      </div><!--/row-->
+
+
+    </div><!--/.fluid-container--> 
+    
+    <!-- Sample by Mr. M. - Confederation College - IMD Program -->
+
+<div class="container">
+
+<div class="row">
+
+<!--
+Thumbnail link for mixer image
+NOTE: data-target is .pop-up-1 for mixer, and .pop-up-2 for lion, these 
+classes must be unique
+-->
+
+<a href="#" data-toggle="modal" data-target=".pop-up-1">
+<img src="http://i.imgur.com/YZ7AGyF.jpg" width="150" class="img-responsive img-rounded center-block" alt=""/>
+</a>
+
+
+
+<!-- Thumbnail link for lion image -->
+<a href="#" data-toggle="modal" data-target=".pop-up-2">
+<img src="http://i.imgur.com/dtaHtds.jpg" width="150" class="img-responsive img-rounded center-block" alt=""/>
+</a>
+
+<!--  Modal content for the mixer image example -->
+  <div class="modal fade pop-up-1" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          <h4 class="modal-title" id="myLargeModalLabel-1">Mixer Board</h4>
+        </div>
+        <div class="modal-body">
+        <img src="http://i.imgur.com/YZ7AGyF.jpg.jpg" class="img-responsive img-rounded center-block" alt=""/>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal mixer image -->
+ 
+ <!--  Modal content for the lion image example -->
+  <div class="modal fade pop-up-2" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel-2" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          
+        </div>
+        <div class="modal-body">
+        <img src="http://i.imgur.com/kzGVqbd.jpg" class="img-responsive img-rounded center-block" alt=""/>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal mixer image -->
+      
+</div>
+</div>
+</div>
+
+    </h:body>  
+</html>  

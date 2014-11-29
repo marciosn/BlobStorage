@@ -1,0 +1,43 @@
+<ui:composition 
+		xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:h="http://java.sun.com/jsf/html"
+	 	xmlns:ui="http://java.sun.com/jsf/facelets">
+	 	
+	<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+ 
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      
+
+      <h:link class="logo" outcome="/index">
+      <b>DASHBOARD<span>-AZURE
+      </span></b>
+      </h:link>
+      
+      
+      <div class="nav-collapse collapse">
+      	<ul class="nav">
+      		<!-- <li><h:link value="Upload" outcome="/pages/upload" /></li>
+              <li><h:link value="Delete" outcome="/pages/delete" /></li>
+              <li><h:link value="Download" outcome="/pages/download" /></li>
+              <li><h:link value="List" outcome="/pages/list" /></li> -->
+    	</ul>
+    	
+    	<ul>
+      		<h:link class="nav pull-right top-menu" value="Logout" outcome="/login"></h:link>
+      		 
+    	</ul>
+
+
+      </div>
+ 
+    </div>
+  </div>
+</div>
+</ui:composition>
